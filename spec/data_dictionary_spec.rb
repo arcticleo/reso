@@ -1,3 +1,6 @@
+require 'nokogiri'
+require 'open-uri'
+
 RSpec.describe Reso::DataDictionary do
 
   it "can be accessed through singleton" do
@@ -20,12 +23,26 @@ RSpec.describe Reso::DataDictionary do
     expect(File.exist?(Reso::DataDictionary.specification.xml_path)).to be_truthy
   end
 
+  it "includes xml_doc method" do
+    expect(Reso::DataDictionary.specification.methods.include? :xml_doc).to be_truthy
+  end
+
+  it "xml_doc returns Nokogiri XML document" do
+    expect(Reso::DataDictionary.specification.xml_doc).to be_a(Nokogiri::XML::Document)
+  end
+
   it "includes method :models" do
     expect(Reso::DataDictionary.specification.methods.include? :models).to be_truthy
   end
 
   it ":models returns array" do
     expect(Reso::DataDictionary.specification.models).to be_a(Array)
+  end
+
+  Reso::DataDictionary.specification.models.each do |resource|
+    it "resource #{resource} exists" do
+      expect(resource.constantize.new).to be_a(resource.constantize)
+    end
   end
 
 end
