@@ -31,15 +31,15 @@ RSpec.describe Reso::DataDictionary do
     expect(Reso::DataDictionary.specification.xml_doc).to be_a(Nokogiri::XML::Document)
   end
 
-  it "includes method :models" do
-    expect(Reso::DataDictionary.specification.methods.include? :models).to be_truthy
+  it "includes method :resources" do
+    expect(Reso::DataDictionary.specification.methods.include? :resources).to be_truthy
   end
 
   it ":models returns array" do
-    expect(Reso::DataDictionary.specification.models).to be_a(Array)
+    expect(Reso::DataDictionary.specification.resources).to be_a(Array)
   end
 
-  Reso::DataDictionary.specification.models.each do |resource|
+  Reso::DataDictionary.specification.resources.each do |resource|
     it "resource #{resource} exists" do
       expect(resource.constantize.new).to be_a(resource.constantize)
     end

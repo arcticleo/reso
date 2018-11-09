@@ -16,7 +16,7 @@ class Reso::DataDictionary
     "reso-1.7.xml"
   end
 
-  def models
+  def resources
     return self.xml_doc.xpath('//Resource').map do |resource|
       "Reso::DataDictionary::#{resource["WikiPageTitle"].to_s.split(" ").first}".classify
     end
