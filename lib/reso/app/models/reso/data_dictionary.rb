@@ -1,0 +1,2 @@
+module Reso::DataDictionary
+end
