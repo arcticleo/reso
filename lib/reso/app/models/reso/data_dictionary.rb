@@ -8,4 +8,12 @@ class Reso::DataDictionary
 
   private_class_method :new
 
+  def xml_path
+    "reso-1.7.xml"
+  end
+
+  def models
+    return []
+  end
+
 end
