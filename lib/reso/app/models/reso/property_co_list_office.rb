@@ -1,0 +1,2 @@
+class Reso::PropertyCoListOffice
+end

@@ -1,0 +1,2 @@
+class Reso::PropertyArea
+end

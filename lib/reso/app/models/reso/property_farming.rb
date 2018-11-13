@@ -1,0 +1,2 @@
+class Reso::PropertyFarming
+end

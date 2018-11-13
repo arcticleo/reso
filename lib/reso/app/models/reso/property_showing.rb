@@ -1,0 +1,2 @@
+class Reso::PropertyShowing
+end

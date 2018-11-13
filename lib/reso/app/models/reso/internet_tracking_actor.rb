@@ -1,0 +1,2 @@
+class Reso::InternetTrackingActor
+end

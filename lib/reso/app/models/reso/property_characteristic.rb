@@ -1,0 +1,2 @@
+class Reso::PropertyCharacteristic
+end
