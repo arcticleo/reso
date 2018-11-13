@@ -64,6 +64,10 @@ require "reso/app/models/reso/team_member.rb"
 require "reso/app/models/reso/ouid.rb"
 require "reso/app/models/reso/contact_listing_note.rb"
 require "reso/app/models/reso/other_phone.rb"
+require "reso/app/models/reso/property_green_verification.rb"
+require "reso/app/models/reso/property_power_production.rb"
+require "reso/app/models/reso/property_room.rb"
+require "reso/app/models/reso/property_unit_type.rb"
 require "reso/app/models/reso/social_media.rb"
 
 module Reso
