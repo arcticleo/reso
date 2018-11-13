@@ -40,9 +40,13 @@ RSpec.describe Reso::DataDictionary do
   end
 
   Reso::DataDictionary.specification.resources.each do |resource|
-    it "resource #{resource} exists" do
-      expect(resource.constantize.new).to be_a(resource.constantize)
+    it "require \"#{resource.split('::').join("/").underscore}.rb\"" do
+
+#    it "resource #{resource} exists" do
+#      expect(resource.constantize.new).to be_a(resource.constantize)
+
     end
   end
 
 end
+

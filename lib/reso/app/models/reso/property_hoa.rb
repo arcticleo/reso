@@ -1,2 +1,0 @@
-class Reso::PropertyHOA
-end

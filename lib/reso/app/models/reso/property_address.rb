@@ -1,2 +1,0 @@
-class Reso::PropertyAddress
-end

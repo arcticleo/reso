@@ -20,7 +20,7 @@ class Reso::DataDictionary
     resources = []
     self.xml_doc.xpath('//Resource').map do |resource|
       resources << resource["WikiPageTitle"].to_s.split(" ").first.classify
-      resources << self.groups_for_resource(resources.last)
+      resources << self.groupss_for_resource(resources.last)
     end
     return resources.flatten.presence.compact.map{|res| "Reso::#{res}" }
   end
@@ -66,6 +66,12 @@ class Reso::DataDictionary
     return [] if sub_resources.blank?
     return sub_resources.map{|resource| [base_resource, resource].join()}
   end
+
+  def groupss_for_resource res
+    fields = self.fields_for_resource res
+    return fields.map{|f| f[:groups].join("::").classify}.flatten.uniq.sort.delete_if{|f| !f.include?("::")}
+  end
+
 
 end
 
