@@ -1,2 +1,3 @@
-class Reso::PropertyRoom
+class Reso::PropertyRoom < ApplicationRecord
+  self.table_name = 'reso_property_rooms'
 end

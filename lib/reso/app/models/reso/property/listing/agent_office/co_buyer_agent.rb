@@ -1,2 +1,3 @@
-class Reso::Property::Listing::AgentOffice::CoBuyerAgent
+class Reso::Property::Listing::AgentOffice::CoBuyerAgent < ApplicationRecord
+  self.table_name = 'reso_property_listing_agent_office_co_buyer_agents'
 end

@@ -1,2 +1,2 @@
-class Reso::Property::Location
+class Reso::Property::Location < ApplicationRecord
 end

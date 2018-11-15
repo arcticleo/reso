@@ -7,6 +7,12 @@ RSpec.describe "Data classes" do
       expect(resource.constantize.new).to be_a(resource.constantize)
     end
   end
+
+  it "Checking parents" do
+    property = Reso::Property.new
+    equipment = Reso::Property::Equipment.new
+#    property.equipment = equipment
+  end
 end
 
 # Reso::DataDictionary.specification.resources.each do |resource|
@@ -17,4 +23,3 @@ end
 #     end
 #   end
 # end
-

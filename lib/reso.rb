@@ -1,6 +1,7 @@
 require "reso/version"
 require "reso/railtie" if defined?(Rails)
 require "reso/config/inflections.rb"
+require "reso/app/models/application_record.rb"
 require "reso/app/models/reso/data_dictionary.rb"
 require "reso/app/models/reso/property.rb"
 require "reso/app/models/reso/property/business.rb"

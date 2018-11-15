@@ -1,2 +1,2 @@
-class Reso::Property::Equipment
+class Reso::Property::Equipment < ApplicationRecord
 end

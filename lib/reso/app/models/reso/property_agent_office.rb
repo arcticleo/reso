@@ -1,2 +1,2 @@
-class Reso::PropertyAgentOffice
+class Reso::PropertyAgentOffice < ApplicationRecord
 end

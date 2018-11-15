@@ -1,2 +1,3 @@
-class Reso::PropertyUnitType
+class Reso::PropertyUnitType < ApplicationRecord
+  self.table_name = 'reso_property_unit_types'
 end

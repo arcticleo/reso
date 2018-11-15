@@ -1,2 +1,3 @@
-class Reso::PropertyGreenVerification
+class Reso::PropertyGreenVerification < ApplicationRecord
+  self.table_name = 'reso_property_green_verifications'
 end
