@@ -17,6 +17,7 @@ RSpec.describe "Data classes" do
           child = child_arr.join("::").classify.constantize.new
           parent.assign_attributes(child_arr.last.underscore.to_sym => child)
           expect(parent.send(child_arr.last.underscore.to_sym)).to be_a(child_arr.join("::").constantize)
+          expect(child.send(parent_arr.last.underscore.to_sym)).to be_a(parent_arr.join("::").constantize)
         end
       end
     end
