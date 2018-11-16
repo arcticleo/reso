@@ -83,6 +83,10 @@ ActiveRecord::Schema.define do
   create_table :reso_property_listing_showings, :force => true do |t|
   end
 
+  create_table :reso_property_locations, :force => true do |t|
+    t.integer :property_id
+  end
+
   create_table :reso_property_location_addresses, :force => true do |t|
   end
 
@@ -93,6 +97,7 @@ ActiveRecord::Schema.define do
   end
 
   create_table :reso_property_location_schools, :force => true do |t|
+    t.integer :location_id
   end
 
   create_table :reso_property_occupant_owners, :force => true do |t|
