@@ -6,7 +6,6 @@ RSpec.describe "Data classes" do
     it "#{resource} can be initialized" do
       expect(resource.constantize.new).to be_a(resource.constantize)
     end
-
     res_arr = resource.split("::")
     if res_arr.count > 2
       it "#{res_arr.join(" -> ")} relationships" do
@@ -21,13 +20,15 @@ RSpec.describe "Data classes" do
         end
       end
     end
-
-#   Reso::DataDictionary.specification.fields_for_class(resource).map{|f| f[:attribute_name]}.each do |attr|
-#     it attr do
-#     end
-#   end
-    
   end
-
 end
 
+Reso::DataDictionary.specification.resources.each do |resource|
+  RSpec.describe "#{resource} Fields" do
+    Reso::DataDictionary.specification.fields_for_class(resource).delete_if{|f| f[:attribute_name].include? "["}.each do |f|
+      it "#{f[:attribute_name]} is present" do
+        expect(resource.constantize.new.attribute_names.include?(f[:attribute_name])).to be_truthy
+      end
+    end
+  end
+end

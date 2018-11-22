@@ -28,9 +28,9 @@ class Reso::DataDictionary
   def fields_for_resource res
     fields = []
     self.xml_doc.css("Resource").each do |resource|
-      if resource["WikiPageTitle"].to_s.split(" ").first.eql?(res)
+      if resource["WikiPageTitle"].to_s.split(" ").first.classify.eql?(res)
         resource.css("Field").each do |field|
-          if field.at_css('ElementStatus').content.to_s.eql?("Active")
+#          if field.at_css('ElementStatus').content.to_s.eql?("Active")
             fields << {
               "standard_name": field.at_css("StandardName").content,
               "attribute_name": field.at_css("StandardName").content.underscore,
@@ -50,13 +50,55 @@ class Reso::DataDictionary
               "repeating_element": field.at_css("RepeatingElement").content,
               "status_change_date": field.at_css("StatusChangeDate").content,
               "revised_date": field.at_css("RevisedDate").content,
-              "modification_timestamp": field.at_css("ModificationTimestamp").content
+              "modification_timestamp": field.at_css("ModificationTimestamp").content,
+              "migration_column": migration_column_for_field(field)
             }
           end
-        end
+#        end
       end
     end
     return fields
+  end
+
+  def migration_column_for_field field
+    streng = ""
+    case field.at_css("SimpleDataType").content
+    when "String"
+      if field.at_css("SugMaxLength").content.to_i > 255
+        streng = "t.text :#{field.at_css("StandardName").content.underscore}"
+      else
+        streng = "t.string :#{field.at_css("StandardName").content.underscore}, limit: #{field.at_css("SugMaxLength").content.to_i}"
+      end
+    when "Number"
+      if field.at_css("SugMaxPrecision").content.to_i.zero?
+        case field.at_css("SugMaxLength").content.to_i
+        when (9..255)
+          streng = "t.string :#{field.at_css("StandardName").content.underscore}, limit: #{field.at_css("SugMaxLength").content.to_i} # TODO: validates :#{field.at_css("StandardName").content.underscore}, format: { with: /\A[0-9]+\z/ }"
+        when (2..8)
+          streng = "t.integer :#{field.at_css("StandardName").content.underscore} # TODO: verify length of .to_s to max #{field.at_css("SugMaxLength").content.to_i}"
+        else
+          streng = "//TODO - #{field.at_css("StandardName").content.underscore} - #{field.at_css("SimpleDataType").content} - #{field.at_css("SugMaxLength").content.to_i} - #{field.at_css("SugMaxPrecision").content.to_i}"
+        end
+      else
+        streng = "t.decimal :#{field.at_css("StandardName").content.underscore}, limit: #{field.at_css("SugMaxLength").content.to_i}, precision: #{field.at_css("SugMaxPrecision").content.to_i}"
+      end
+    when "Timestamp"
+      streng = "t.datetime :#{field.at_css("StandardName").content.underscore}"
+    when "Boolean"
+      streng = "t.boolean :#{field.at_css("StandardName").content.underscore}"
+    when "Date"
+      streng = "t.date :#{field.at_css("StandardName").content.underscore}"
+    when "Collection"
+      streng = "t.string :#{field.at_css("StandardName").content.underscore} # TODO: DELETE - Collection - has_many :through"
+    when "String List, Single"
+      streng = "t.text :#{field.at_css("StandardName").content.underscore}, limit: #{field.at_css("SugMaxLength").content.to_i} # TODO: DELETE - String List, Single - has_one :through"
+    when "String List, Multi"
+      streng = "t.text :#{field.at_css("StandardName").content.underscore}, limit: #{field.at_css("SugMaxLength").content.to_i} # TODO: DELETE - String List, Multi - has_many :through"
+    else
+      streng = "//TODO - #{field.at_css("StandardName").content.underscore} - #{field.at_css("SimpleDataType").content} - #{field.at_css("SugMaxLength").content.to_i} - #{field.at_css("SugMaxPrecision").content.to_i}"
+    end
+    streng = "# TODO: Handle dynamic fields - #{streng}" if streng.include?("[")
+    return streng
   end
 
   def fields_for_class klass
