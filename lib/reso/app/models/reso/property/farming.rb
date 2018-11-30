@@ -3,4 +3,7 @@ class Reso::Property::Farming < ApplicationRecord
 
   belongs_to :property
 
+  has_many :vegetation_assignments, as: :enumerable
+  has_many :vegetation, through: :vegetation_assignments, source: :enumeration, class_name: "Reso::Lookup::Vegetation"
+
 end

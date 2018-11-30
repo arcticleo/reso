@@ -121,7 +121,7 @@ ActiveRecord::Schema.define do
     t.boolean :grazing_permits_private_yn
     t.decimal :pasture_area, limit: 14, precision: 2
     t.decimal :range_area, limit: 14, precision: 2
-    t.text :vegetation, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
+#    t.text :vegetation, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
     t.decimal :wooded_area, limit: 14, precision: 2
     t.timestamps
   end
