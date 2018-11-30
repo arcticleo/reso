@@ -874,7 +874,7 @@ ActiveRecord::Schema.define do
     # TODO: Handle dynamic fields - t.integer :power_production[type]year_install # TODO: verify length of .to_s to max 4
     t.text :sewer, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
     t.text :utilities, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
-    t.text :water_source, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
+#    t.text :water_source, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
     t.timestamps
   end
 

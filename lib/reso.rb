@@ -9,6 +9,7 @@ require "reso/app/models/reso/enumeration_assignment.rb"
 require "reso/app/models/reso/lookup.rb"
 require "reso/app/models/reso/lookup/property_sub_type.rb"
 require "reso/app/models/reso/lookup/year_built_source.rb"
+require "reso/app/models/reso/lookup/water_source.rb"
 
 require "reso/app/models/reso/property.rb"
 require "reso/app/models/reso/property/business.rb"
