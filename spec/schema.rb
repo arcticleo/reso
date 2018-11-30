@@ -1,10 +1,28 @@
 ActiveRecord::Schema.define do
   self.verbose = false
 
+  create_table :reso_enumerations, :force => true do |t|
+    t.string :name
+    t.string :type
+    t.timestamps
+  end
+
+  create_table :enumeration_assignments do |t|
+    t.string :type
+    t.references :enumerable, polymorphic: true, index: false
+    t.references :enumeration, index: true
+    t.timestamps
+  end
+  add_index :enumeration_assignments, :type
+  add_index :enumeration_assignments,
+    [:enumerable_type, :enumerable_id],
+    {name: "index_on_enumerable_type_and_id"}
+
   create_table :reso_properties, :force => true do |t|
-    t.text :property_sub_type, limit: 50 # TODO: DELETE - String List, Single - has_one :through
+#    t.text :property_sub_type, limit: 50 # TODO: DELETE - String List, Single - has_one :through
     t.text :property_type, limit: 50 # TODO: DELETE - String List, Single - has_one :through
     t.string :property_universal_id, limit: 128
+    t.timestamps
   end
 
   create_table :reso_property_equipment, :force => true do |t|
@@ -12,6 +30,7 @@ ActiveRecord::Schema.define do
     t.text :appliances, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
     t.text :other_equipment, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
     t.text :security_features, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
+    t.timestamps
   end
 
   create_table :reso_property_businesses, :force => true do |t|
@@ -33,6 +52,7 @@ ActiveRecord::Schema.define do
     t.text :special_licenses, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
     t.integer :year_established # TODO: verify length of .to_s to max 4
     t.integer :years_current_owner # TODO: verify length of .to_s to max 4
+    t.timestamps
   end
 
   create_table :reso_property_characteristics, :force => true do |t|
@@ -86,6 +106,7 @@ ActiveRecord::Schema.define do
     t.string :water_body_name, limit: 50
     t.text :waterfront_features, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
     t.boolean :waterfront_yn
+    t.timestamps
   end
 
   create_table :reso_property_farmings, :force => true do |t|
@@ -102,6 +123,7 @@ ActiveRecord::Schema.define do
     t.decimal :range_area, limit: 14, precision: 2
     t.text :vegetation, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
     t.decimal :wooded_area, limit: 14, precision: 2
+    t.timestamps
   end
 
   create_table :reso_property_financials, :force => true do |t|
@@ -143,6 +165,7 @@ ActiveRecord::Schema.define do
     t.decimal :vacancy_allowance_rate, limit: 5, precision: 2
     t.decimal :water_sewer_expense, limit: 14, precision: 2
     t.decimal :workmans_compensation_expense, limit: 14, precision: 2
+    t.timestamps
   end
 
   create_table :reso_property_hoas, :force => true do |t|
@@ -159,6 +182,7 @@ ActiveRecord::Schema.define do
     t.string :association_phone2, limit: 16
     t.boolean :association_yn
     t.text :pets_allowed, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
+    t.timestamps
   end
 
   create_table :reso_property_listings, :force => true do |t|
@@ -181,10 +205,12 @@ ActiveRecord::Schema.define do
     t.string :source_system_key, limit: 255
     t.string :source_system_name, limit: 255
     t.text :standard_status, limit: 25 # TODO: DELETE - String List, Single - has_one :through
+    t.timestamps
   end
 
   create_table :reso_property_listing_agent_offices, :force => true do |t|
     t.integer :listing_id
+    t.timestamps
   end
 
   create_table :reso_property_listing_agent_office_buyer_agents, :force => true do |t|
@@ -215,6 +241,7 @@ ActiveRecord::Schema.define do
     t.text :buyer_agent_url
     t.string :buyer_agent_voice_mail, limit: 16
     t.string :buyer_agent_voice_mail_ext, limit: 10
+    t.timestamps
   end
 
   create_table :reso_property_listing_agent_office_buyer_offices, :force => true do |t|
@@ -229,6 +256,7 @@ ActiveRecord::Schema.define do
     t.string :buyer_office_phone, limit: 16
     t.string :buyer_office_phone_ext, limit: 10
     t.text :buyer_office_url
+    t.timestamps
   end
 
   create_table :reso_property_listing_agent_office_co_buyer_agents, :force => true do |t|
@@ -259,6 +287,7 @@ ActiveRecord::Schema.define do
     t.text :co_buyer_agent_url
     t.string :co_buyer_agent_voice_mail, limit: 16
     t.string :co_buyer_agent_voice_mail_ext, limit: 10
+    t.timestamps
   end
 
   create_table :reso_property_listing_agent_office_co_buyer_offices, :force => true do |t|
@@ -273,6 +302,7 @@ ActiveRecord::Schema.define do
     t.string :co_buyer_office_phone, limit: 16
     t.string :co_buyer_office_phone_ext, limit: 10
     t.text :co_buyer_office_url
+    t.timestamps
   end
 
   create_table :reso_property_listing_agent_office_co_list_agents, :force => true do |t|
@@ -303,6 +333,7 @@ ActiveRecord::Schema.define do
     t.text :co_list_agent_url
     t.string :co_list_agent_voice_mail, limit: 16
     t.string :co_list_agent_voice_mail_ext, limit: 10
+    t.timestamps
   end
 
   create_table :reso_property_listing_agent_office_co_list_offices, :force => true do |t|
@@ -317,6 +348,7 @@ ActiveRecord::Schema.define do
     t.string :co_list_office_phone, limit: 16
     t.string :co_list_office_phone_ext, limit: 10
     t.text :co_list_office_url
+    t.timestamps
   end
 
   create_table :reso_property_listing_agent_office_list_agents, :force => true do |t|
@@ -347,6 +379,7 @@ ActiveRecord::Schema.define do
     t.text :list_agent_url
     t.string :list_agent_voice_mail, limit: 16
     t.string :list_agent_voice_mail_ext, limit: 10
+    t.timestamps
   end
 
   create_table :reso_property_listing_agent_office_list_offices, :force => true do |t|
@@ -361,6 +394,7 @@ ActiveRecord::Schema.define do
     t.string :list_office_phone, limit: 16
     t.string :list_office_phone_ext, limit: 10
     t.text :list_office_url
+    t.timestamps
   end
 
   create_table :reso_property_listing_agent_office_teams, :force => true do |t|
@@ -371,6 +405,7 @@ ActiveRecord::Schema.define do
     t.string :list_team_key, limit: 255
     t.string :list_team_key_numeric, limit: 255 # TODO: validates :list_team_key_numeric, format: { with: /A[0-9]+z/ }
     t.string :list_team_name, limit: 50
+    t.timestamps
   end
 
   create_table :reso_property_listing_closings, :force => true do |t|
@@ -382,6 +417,7 @@ ActiveRecord::Schema.define do
     t.string :concessions_comments, limit: 200
     t.text :contingency
     t.text :possession, limit: 255 # TODO: DELETE - String List, Multi - has_many :through
+    t.timestamps
   end
 
   create_table :reso_property_listing_compensations, :force => true do |t|
@@ -394,6 +430,7 @@ ActiveRecord::Schema.define do
     t.text :sub_agency_compensation_type, limit: 25 # TODO: DELETE - String List, Single - has_one :through
     t.string :transaction_broker_compensation, limit: 25
     t.text :transaction_broker_compensation_type, limit: 25 # TODO: DELETE - String List, Single - has_one :through
+    t.timestamps
   end
 
   create_table :reso_property_listing_contracts, :force => true do |t|
@@ -406,6 +443,7 @@ ActiveRecord::Schema.define do
     t.text :listing_terms, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
     t.text :ownership
     t.text :special_listing_conditions, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
+    t.timestamps
   end
 
   create_table :reso_property_listing_dates, :force => true do |t|
@@ -431,6 +469,7 @@ ActiveRecord::Schema.define do
     t.date :purchase_contract_date
     t.datetime :status_change_timestamp
     t.date :withdrawn_date
+    t.timestamps
   end
 
   create_table :reso_property_listing_marketings, :force => true do |t|
@@ -443,6 +482,7 @@ ActiveRecord::Schema.define do
     t.text :syndicate_to, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
     t.text :virtual_tour_url_branded
     t.text :virtual_tour_url_unbranded
+    t.timestamps
   end
 
   create_table :reso_property_listing_media, :force => true do |t|
@@ -454,6 +494,7 @@ ActiveRecord::Schema.define do
     t.integer :photos_count # TODO: verify length of .to_s to max 2
     t.datetime :videos_change_timestamp
     t.integer :videos_count # TODO: verify length of .to_s to max 2
+    t.timestamps
   end
 
   create_table :reso_property_listing_prices, :force => true do |t|
@@ -463,6 +504,7 @@ ActiveRecord::Schema.define do
     t.decimal :list_price_low, limit: 14, precision: 2
     t.decimal :original_list_price, limit: 14, precision: 2
     t.decimal :previous_list_price, limit: 14, precision: 2
+    t.timestamps
   end
 
   create_table :reso_property_listing_remarks, :force => true do |t|
@@ -471,6 +513,7 @@ ActiveRecord::Schema.define do
     t.text :private_remarks
     t.text :public_remarks
     t.text :syndication_remarks
+    t.timestamps
   end
 
   create_table :reso_property_listing_showings, :force => true do |t|
@@ -490,10 +533,12 @@ ActiveRecord::Schema.define do
     t.text :showing_instructions
     t.text :showing_requirements, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
     t.datetime :showing_start_time
+    t.timestamps
   end
 
   create_table :reso_property_locations, :force => true do |t|
     t.integer :property_id
+    t.timestamps
   end
 
   create_table :reso_property_location_addresses, :force => true do |t|
@@ -517,6 +562,7 @@ ActiveRecord::Schema.define do
     t.string :township, limit: 50
     t.string :unit_number, limit: 25
     t.string :unparsed_address, limit: 255
+    t.timestamps
   end
 
   create_table :reso_property_location_areas, :force => true do |t|
@@ -528,6 +574,7 @@ ActiveRecord::Schema.define do
     t.text :mls_area_minor, limit: 50 # TODO: DELETE - String List, Single - has_one :through
     t.string :state_region, limit: 150
     t.string :subdivision_name, limit: 50
+    t.timestamps
   end
 
   create_table :reso_property_location_gis, :force => true do |t|
@@ -541,6 +588,7 @@ ActiveRecord::Schema.define do
     t.string :map_coordinate, limit: 25
     t.string :map_coordinate_source, limit: 25
     t.text :map_url
+    t.timestamps
   end
 
   create_table :reso_property_location_schools, :force => true do |t|
@@ -551,6 +599,7 @@ ActiveRecord::Schema.define do
     t.text :high_school_district, limit: 50 # TODO: DELETE - String List, Single - has_one :through
     t.text :middle_or_junior_school, limit: 50 # TODO: DELETE - String List, Single - has_one :through
     t.text :middle_or_junior_school_district, limit: 50 # TODO: DELETE - String List, Single - has_one :through
+    t.timestamps
   end
 
   create_table :reso_property_occupant_owners, :force => true do |t|
@@ -560,6 +609,7 @@ ActiveRecord::Schema.define do
     t.text :occupant_type, limit: 50 # TODO: DELETE - String List, Single - has_one :through
     t.string :owner_name, limit: 50
     t.string :owner_phone, limit: 16
+    t.timestamps
   end
 
   create_table :reso_property_structures, :force => true do |t|
@@ -657,6 +707,7 @@ ActiveRecord::Schema.define do
     t.text :year_built_details
     t.integer :year_built_effective # TODO: verify length of .to_s to max 4
     t.text :year_built_source, limit: 60 # TODO: DELETE - String List, Single - has_one :through
+    t.timestamps
   end
 
   create_table :reso_property_structure_performance_green_marketings, :force => true do |t|
@@ -668,10 +719,12 @@ ActiveRecord::Schema.define do
     t.text :green_sustainability, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
     t.text :green_water_conservation, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
     t.integer :walk_score # TODO: verify length of .to_s to max 3
+    t.timestamps
   end
 
   create_table :reso_property_structure_performances, :force => true do |t|
     t.integer :structure_id
+    t.timestamps
   end
 
   create_table :reso_property_structure_performance_green_verifications, :force => true do |t|
@@ -686,6 +739,7 @@ ActiveRecord::Schema.define do
     # TODO: Handle dynamic fields - t.text :green_verification[type]url
     # TODO: Handle dynamic fields - t.string :green_verification[type]version, limit: 25
     # TODO: Handle dynamic fields - t.integer :green_verification[type]year # TODO: verify length of .to_s to max 4
+    t.timestamps
   end
 
   create_table :reso_property_structure_rooms, :force => true do |t|
@@ -704,6 +758,7 @@ ActiveRecord::Schema.define do
     # TODO: Handle dynamic fields - t.decimal :room[type]width, limit: 14, precision: 2
     t.string :rooms # TODO: DELETE - Collection - has_many :through
     t.integer :rooms_total # TODO: verify length of .to_s to max 3
+    t.timestamps
   end
 
   create_table :reso_property_taxes, :force => true do |t|
@@ -728,6 +783,7 @@ ActiveRecord::Schema.define do
     t.integer :tax_year # TODO: verify length of .to_s to max 4
     t.string :zoning, limit: 25
     t.string :zoning_description
+    t.timestamps
   end
 
   create_table :reso_property_unit_types, :force => true do |t|
@@ -761,6 +817,7 @@ ActiveRecord::Schema.define do
     t.decimal :unit_type_total_rent, limit: 14, precision: 2
     t.text :unit_type_type, limit: 1024 # TODO: DELETE - String List, Single - has_one :through
     t.integer :unit_type_units_total # TODO: verify length of .to_s to max 3
+    t.timestamps
   end
 
   create_table :reso_property_utilities, :force => true do |t|
@@ -818,6 +875,7 @@ ActiveRecord::Schema.define do
     t.text :sewer, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
     t.text :utilities, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
     t.text :water_source, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
+    t.timestamps
   end
 
   create_table :reso_members, :force => true do |t|
@@ -893,6 +951,7 @@ ActiveRecord::Schema.define do
     t.string :source_system_member_key, limit: 255
     t.string :source_system_name, limit: 255
     t.text :syndicate_to, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
+    t.timestamps
   end
 
   create_table :reso_offices, :force => true do |t|
@@ -945,6 +1004,7 @@ ActiveRecord::Schema.define do
     t.string :source_system_office_key, limit: 255
     t.text :syndicate_agent_option, limit: 50 # TODO: DELETE - String List, Single - has_one :through
     t.text :syndicate_to, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
+    t.timestamps
   end
 
   create_table :reso_contacts, :force => true do |t|
@@ -1040,6 +1100,7 @@ ActiveRecord::Schema.define do
     t.string :work_postal_code, limit: 10
     t.string :work_postal_code_plus4, limit: 4
     t.text :work_state_or_province, limit: 2 # TODO: DELETE - String List, Single - has_one :through    
+    t.timestamps
   end
 
   create_table :reso_contact_listings, :force => true do |t|
@@ -1065,6 +1126,7 @@ ActiveRecord::Schema.define do
     t.datetime :modification_timestamp
     t.datetime :portal_last_visited_timestamp
     t.text :resource_name, limit: 50 # TODO: DELETE - String List, Single - has_one :through    
+    t.timestamps
   end
 
   create_table :reso_media, :force => true do |t|
@@ -1101,6 +1163,7 @@ ActiveRecord::Schema.define do
     t.string :source_system_id, limit: 25
     t.string :source_system_media_key, limit: 255
     t.string :source_system_name, limit: 255
+    t.timestamps
   end
 
   create_table :reso_history_transactionals, :force => true do |t|
@@ -1127,6 +1190,7 @@ ActiveRecord::Schema.define do
     t.string :source_system_history_key, limit: 255
     t.string :source_system_id, limit: 25
     t.string :source_system_name, limit: 255
+    t.timestamps
   end
 
   create_table :reso_internet_trackings, :force => true do |t|
@@ -1154,6 +1218,7 @@ ActiveRecord::Schema.define do
     t.string :session_id, limit: 255
     t.string :source_system_actor_key, limit: 255
     t.string :user_agent, limit: 255
+    t.timestamps
   end
 
   create_table :reso_internet_tracking_actors, :force => true do |t|
@@ -1182,6 +1247,7 @@ ActiveRecord::Schema.define do
     t.string :session_id, limit: 255
     t.string :source_system_actor_key, limit: 255
     t.string :user_agent, limit: 255
+    t.timestamps
   end
 
   create_table :reso_internet_tracking_events, :force => true do |t|
@@ -1200,6 +1266,7 @@ ActiveRecord::Schema.define do
     t.string :originating_system_event_key, limit: 255
     t.text :referring_url
     t.string :source_system_event_key, limit: 255
+    t.timestamps
   end
 
   create_table :reso_internet_tracking_objects, :force => true do |t|
@@ -1216,6 +1283,7 @@ ActiveRecord::Schema.define do
     t.text :object_url
     t.string :originating_system_object_key, limit: 255
     t.string :source_system_object_key, limit: 255
+    t.timestamps
   end
 
   create_table :reso_saved_searches, :force => true do |t|
@@ -1244,6 +1312,7 @@ ActiveRecord::Schema.define do
     t.string :source_system_id, limit: 25
     t.string :source_system_key, limit: 255
     t.string :source_system_name, limit: 255
+    t.timestamps
   end
 
   create_table :reso_open_houses, :force => true do |t|
@@ -1275,6 +1344,7 @@ ActiveRecord::Schema.define do
     t.string :source_system_id, limit: 25
     t.string :source_system_key, limit: 255
     t.string :source_system_name, limit: 255
+    t.timestamps
   end
 
   create_table :reso_prospectings, :force => true do |t|
@@ -1308,6 +1378,7 @@ ActiveRecord::Schema.define do
     t.text :schedule_type, limit: 25 # TODO: DELETE - String List, Single - has_one :through
     t.string :subject, limit: 255
     t.text :to_email_list
+    t.timestamps
   end
 
   create_table :reso_showings, :force => true do |t|
@@ -1325,6 +1396,7 @@ ActiveRecord::Schema.define do
     t.string :showing_source_system_name, limit: 255
     t.datetime :showing_start_timestamp
     t.string :source_system_showing_key, limit: 255
+    t.timestamps
   end
 
   create_table :reso_showing_agents, :force => true do |t|
@@ -1338,6 +1410,7 @@ ActiveRecord::Schema.define do
     t.string :showing_agent_key_numeric, limit: 255 # TODO: validates :showing_agent_key_numeric, format: { with: /A[0-9]+z/ }
     t.string :showing_agent_mls_id, limit: 25
     t.string :source_system_agent_key, limit: 255
+    t.timestamps
   end
 
   create_table :reso_showing_listings, :force => true do |t|
@@ -1351,6 +1424,7 @@ ActiveRecord::Schema.define do
     t.string :listing_source_system_name, limit: 255
     t.string :originating_system_listing_key, limit: 255
     t.string :source_system_listing_key, limit: 255
+    t.timestamps
   end
 
   create_table :reso_teams, :force => true do |t|
@@ -1397,6 +1471,7 @@ ActiveRecord::Schema.define do
     t.string :team_voice_mail, limit: 16
     t.string :team_voice_mail_ext, limit: 10
     t.string :teams_social_media # TODO: DELETE - Collection - has_many :through
+    t.timestamps
   end
 
   create_table :reso_team_members, :force => true do |t|
@@ -1420,6 +1495,7 @@ ActiveRecord::Schema.define do
     t.string :team_member_national_association_id, limit: 25
     t.string :team_member_state_license, limit: 50
     t.text :team_member_type, limit: 50 # TODO: DELETE - String List, Single - has_one :through
+    t.timestamps
   end
 
   create_table :reso_ouids, :force => true do |t|
@@ -1470,6 +1546,7 @@ ActiveRecord::Schema.define do
     t.string :organization_unique_id_key, limit: 255
     t.string :organization_unique_id_key_numeric, limit: 255 # TODO: validates :organization_unique_id_key_numeric, format: { with: /A[0-9]+z/ }
     t.datetime :original_entry_timestamp
+    t.timestamps
   end
 
   create_table :reso_contact_listing_notes, :force => true do |t|
@@ -1483,6 +1560,7 @@ ActiveRecord::Schema.define do
     t.datetime :modification_timestamp
     t.text :note_contents
     t.text :noted_by, limit: 25 # TODO: DELETE - String List, Single - has_one :through
+    t.timestamps
   end
 
   create_table :reso_other_phones, :force => true do |t|
@@ -1497,6 +1575,7 @@ ActiveRecord::Schema.define do
     t.string :resource_record_id, limit: 255
     t.string :resource_record_key, limit: 255
     t.string :resource_record_key_numeric, limit: 255 # TODO: validates :resource_record_key_numeric, format: { with: /A[0-9]+z/ }
+    t.timestamps
   end
 
   create_table :reso_property_green_verifications, :force => true do |t|
@@ -1515,6 +1594,7 @@ ActiveRecord::Schema.define do
     t.string :listing_key, limit: 255
     t.string :listing_key_numeric, limit: 255 # TODO: validates :listing_key_numeric, format: { with: /A[0-9]+z/ }
     t.datetime :modification_timestamp
+    t.timestamps
   end
 
   create_table :reso_property_power_productions, :force => true do |t|
@@ -1529,6 +1609,7 @@ ActiveRecord::Schema.define do
     t.decimal :power_production_size, limit: 5, precision: 2
     t.text :power_production_type, limit: 1024 # TODO: DELETE - String List, Single - has_one :through
     t.integer :power_production_year_install # TODO: verify length of .to_s to max 4
+    t.timestamps
   end
 
   create_table :reso_property_rooms, :force => true do |t|
@@ -1550,6 +1631,7 @@ ActiveRecord::Schema.define do
     t.text :room_level, limit: 25 # TODO: DELETE - String List, Single - has_one :through
     t.text :room_type, limit: 1024 # TODO: DELETE - String List, Single - has_one :through
     t.decimal :room_width, limit: 14, precision: 2
+    t.timestamps
   end
   
 #  Reso::PropertyUnitType Fields
@@ -1582,6 +1664,7 @@ ActiveRecord::Schema.define do
     t.string :social_media_key_numeric, limit: 255 # TODO: validates :social_media_key_numeric, format: { with: /A[0-9]+z/ }
     t.text :social_media_type, limit: 50 # TODO: DELETE - String List, Single - has_one :through
     t.text :social_media_url_or_id
+    t.timestamps
   end
 
 end

@@ -24,11 +24,12 @@ RSpec.describe "Data classes" do
 end
 
 Reso::DataDictionary.specification.resources.each do |resource|
-  RSpec.describe "#{resource} Fields" do
+  RSpec.describe "#{resource}" do
     Reso::DataDictionary.specification.fields_for_class(resource).delete_if{|f| f[:attribute_name].include? "["}.each do |f|
-      it "#{f[:attribute_name]} is present" do
-        expect(resource.constantize.new.attribute_names.include?(f[:attribute_name])).to be_truthy
+      it "#{f[:attribute_name]} can be called" do
+        expect{resource.constantize.new.send(f[:attribute_name])}.not_to raise_error
       end
     end
   end
 end
+

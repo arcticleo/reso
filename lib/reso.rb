@@ -3,6 +3,12 @@ require "reso/railtie" if defined?(Rails)
 require "reso/config/inflections.rb"
 require "reso/app/models/application_record.rb"
 require "reso/app/models/reso/data_dictionary.rb"
+
+require "reso/app/models/reso/enumeration.rb"
+require "reso/app/models/reso/enumeration_assignment.rb"
+require "reso/app/models/reso/lookup.rb"
+require "reso/app/models/reso/lookup/property_sub_type.rb"
+
 require "reso/app/models/reso/property.rb"
 require "reso/app/models/reso/property/business.rb"
 require "reso/app/models/reso/property/characteristic.rb"
@@ -70,6 +76,7 @@ require "reso/app/models/reso/property_power_production.rb"
 require "reso/app/models/reso/property_room.rb"
 require "reso/app/models/reso/property_unit_type.rb"
 require "reso/app/models/reso/social_media.rb"
+require "reso/config/initializers/enumeration_assignments.rb"
 
 module Reso
   class Error < StandardError; end

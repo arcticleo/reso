@@ -2,6 +2,9 @@ class Reso::Property < ApplicationRecord
 
   self.table_name = 'reso_properties'
 
+  has_one :property_sub_type_assignment, as: :enumerable
+  has_one :property_sub_type, through: :property_sub_type_assignment, source: :enumeration, class_name: "Reso::Lookup::PropertySubType"
+
   has_one :business
   has_one :characteristic
   has_one :equipment
