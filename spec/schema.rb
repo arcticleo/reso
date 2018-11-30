@@ -100,7 +100,7 @@ ActiveRecord::Schema.define do
     t.text :spa_features, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
     t.boolean :spa_yn
     t.string :topography, limit: 255
-    t.text :units_furnished, limit: 25 # TODO: DELETE - String List, Single - has_one :through
+#    t.text :units_furnished, limit: 25 # TODO: DELETE - String List, Single - has_one :through
     t.text :view, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
     t.boolean :view_yn
     t.string :water_body_name, limit: 50

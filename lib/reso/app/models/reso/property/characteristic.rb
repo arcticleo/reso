@@ -3,4 +3,7 @@ class Reso::Property::Characteristic < ApplicationRecord
 
   belongs_to :property
 
+  has_one :units_furnished_assignment, as: :enumerable
+  has_one :units_furnished, through: :units_furnished_assignment, source: :enumeration, class_name: "Reso::Lookup::UnitsFurnished"
+
 end
