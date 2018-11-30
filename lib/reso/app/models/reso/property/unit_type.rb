@@ -3,4 +3,7 @@ class Reso::Property::UnitType < ApplicationRecord
 
   belongs_to :property
 
+  has_one :unit_type_type_assignment, as: :enumerable
+  has_one :unit_type_type, through: :unit_type_type_assignment, source: :enumeration, class_name: "Reso::Lookup::UnitTypeType"
+
 end

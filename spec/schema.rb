@@ -815,7 +815,7 @@ ActiveRecord::Schema.define do
     t.string :unit_type_key_numeric, limit: 255 # TODO: validates :unit_type_key_numeric, format: { with: /A[0-9]+z/ }
     t.integer :unit_type_pro_forma # TODO: verify length of .to_s to max 6
     t.decimal :unit_type_total_rent, limit: 14, precision: 2
-    t.text :unit_type_type, limit: 1024 # TODO: DELETE - String List, Single - has_one :through
+#    t.text :unit_type_type, limit: 1024 # TODO: DELETE - String List, Single - has_one :through
     t.integer :unit_type_units_total # TODO: verify length of .to_s to max 3
     t.timestamps
   end
