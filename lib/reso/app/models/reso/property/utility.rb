@@ -3,6 +3,9 @@ class Reso::Property::Utility < ApplicationRecord
 
   belongs_to :property
 
+  has_many :utility_assignments, as: :enumerable
+  has_many :utilities, through: :utility_assignments, source: :enumeration, class_name: "Reso::Lookup::Utility"
+
   has_many :water_source_assignments, as: :enumerable
   has_many :water_source, through: :water_source_assignments, source: :enumeration, class_name: "Reso::Lookup::WaterSource"
 
