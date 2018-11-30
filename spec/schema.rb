@@ -706,7 +706,7 @@ ActiveRecord::Schema.define do
     t.integer :year_built # TODO: verify length of .to_s to max 4
     t.text :year_built_details
     t.integer :year_built_effective # TODO: verify length of .to_s to max 4
-    t.text :year_built_source, limit: 60 # TODO: DELETE - String List, Single - has_one :through
+#    t.text :year_built_source, limit: 60 # TODO: DELETE - String List, Single - has_one :through
     t.timestamps
   end
 

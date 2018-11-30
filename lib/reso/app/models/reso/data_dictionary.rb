@@ -25,6 +25,12 @@ class Reso::DataDictionary
     return resources.flatten.presence.compact.map{|res| "Reso::#{res}" }
   end
 
+  def lookup_fields
+    self.xml_doc.css("LookupValue LookupField").map do |item|
+      "Reso::Lookup::#{item.content.classify}"
+    end.uniq.sort.delete_if{|item| item.include?("[")}
+  end
+
   def fields_for_resource res
     fields = []
     self.xml_doc.css("Resource").each do |resource|

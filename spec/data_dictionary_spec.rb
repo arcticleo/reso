@@ -1,23 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
 
-RSpec.describe "Enumerations" do
-#  VIEWS = %w(Beach City Forest Ocean Panoramic Skyline)
-#  VIEWS.each{|name| Reso::Lookup::View.create(name: name)}
-
-  PROPERTY_SUB_TYPES = ["Apartment", "Condominium", "Farm", "Ranch", "Single Family Residence"]
-  PROPERTY_TYPES = ["Residential", "Farm", "Land"]
-  PROPERTY_SUB_TYPES.each{|name| Reso::Lookup::PropertySubType.create(name: name)}
-
-  it "can add Reso::Lookup::PropertySubType" do
-    expect{PROPERTY_SUB_TYPES.each{|name| Reso::Lookup::PropertySubType.create(name: name)}}.not_to raise_error
-  end
-
-  it "can add Reso::Lookup::PropertyType" do
-    expect{PROPERTY_TYPES.each{|name| Reso::Lookup::PropertyType.create(name: name)}}.to raise_error
-  end
-end
-
 RSpec.describe Reso::DataDictionary do
 
   it "can be accessed through singleton" do

@@ -3,6 +3,9 @@ class Reso::Property::Structure < ApplicationRecord
 
   belongs_to :property
 
+  has_one :year_built_source_assignment, as: :enumerable
+  has_one :year_built_source, through: :year_built_source_assignment, source: :enumeration, class_name: "Reso::Lookup::YearBuiltSource"
+
   has_one :performance
   has_one :room
 end
