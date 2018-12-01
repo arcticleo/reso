@@ -3,4 +3,7 @@ class Reso::Property::Financial < ApplicationRecord
 
   belongs_to :property
 
+  has_many :tenant_pay_assignments, as: :enumerable
+  has_many :tenant_pays, through: :tenant_pay_assignments, source: :enumeration, class_name: "Reso::Lookup::TenantPay"
+
 end

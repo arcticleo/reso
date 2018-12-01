@@ -158,7 +158,7 @@ ActiveRecord::Schema.define do
     t.boolean :rent_control_yn
     t.text :rent_includes, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
     t.decimal :supplies_expense, limit: 14, precision: 2
-    t.text :tenant_pays, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
+#    t.text :tenant_pays, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
     t.decimal :total_actual_rent, limit: 14, precision: 2
     t.decimal :trash_expense, limit: 14, precision: 2
     t.string :vacancy_allowance, limit: 9 # TODO: validates :vacancy_allowance, format: { with: /A[0-9]+z/ }
