@@ -1466,7 +1466,7 @@ ActiveRecord::Schema.define do
     t.string :team_preferred_phone, limit: 16
     t.string :team_preferred_phone_ext, limit: 10
     t.text :team_state_or_province, limit: 2 # TODO: DELETE - String List, Single - has_one :through
-    t.text :team_status, limit: 25 # TODO: DELETE - String List, Single - has_one :through
+#    t.text :team_status, limit: 25 # TODO: DELETE - String List, Single - has_one :through
     t.string :team_toll_free_phone, limit: 16
     t.string :team_voice_mail, limit: 16
     t.string :team_voice_mail_ext, limit: 10
