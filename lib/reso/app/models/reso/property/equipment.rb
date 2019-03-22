@@ -1,4 +1,4 @@
-class Reso::Property::Equipment < ApplicationRecord
+class RESO::Property::Equipment < ApplicationRecord
 
   belongs_to :property
 

@@ -86,7 +86,7 @@ require "reso/app/models/reso/property_unit_type.rb"
 require "reso/app/models/reso/social_media.rb"
 require "reso/config/initializers/enumeration_assignments.rb"
 
-module Reso
+module RESO
   class Error < StandardError; end
   # Your code goes here...
 end

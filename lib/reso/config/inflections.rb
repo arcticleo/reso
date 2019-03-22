@@ -4,6 +4,7 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   # inflect.irregular 'person', 'people'
   # inflect.uncountable %w( fish sheep )
 
+  inflect.acronym "RESO"
   inflect.uncountable %w( media socialmedia gis )
 
 end

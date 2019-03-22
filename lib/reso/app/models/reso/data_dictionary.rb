@@ -1,6 +1,6 @@
-class Reso::DataDictionary
+class RESO::DataDictionary
 
-  @@instance = Reso::DataDictionary.new
+  @@instance = RESO::DataDictionary.new
 
   def self.specification
     return @@instance

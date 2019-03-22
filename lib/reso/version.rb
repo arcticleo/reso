@@ -1,3 +1,3 @@
-module Reso
-  VERSION = "0.2.0"
+module RESO
+  VERSION = "0.2.1"
 end

@@ -1,374 +1,374 @@
-class Reso::AccessibilityFeatureAssignment < Reso::EnumerationAssignment
+class RESO::AccessibilityFeatureAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::ActorTypeAssignment < Reso::EnumerationAssignment
+class RESO::ActorTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::AreaSourceAssignment < Reso::EnumerationAssignment
+class RESO::AreaSourceAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::AreaUnitAssignment < Reso::EnumerationAssignment
+class RESO::AreaUnitAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::AssociationFeeIncludeAssignment < Reso::EnumerationAssignment
+class RESO::AssociationFeeIncludeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::AttendedAssignment < Reso::EnumerationAssignment
+class RESO::AttendedAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::BodyTypeAssignment < Reso::EnumerationAssignment
+class RESO::BodyTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::BusinessTypeAssignment < Reso::EnumerationAssignment
+class RESO::BusinessTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::BuyerAgentDesignationAssignment < Reso::EnumerationAssignment
+class RESO::BuyerAgentDesignationAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::BuyerFinancingAssignment < Reso::EnumerationAssignment
+class RESO::BuyerFinancingAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::ChangeTypeAssignment < Reso::EnumerationAssignment
+class RESO::ChangeTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::ClassNameAssignment < Reso::EnumerationAssignment
+class RESO::ClassNameAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::CoBuyerAgentDesignationAssignment < Reso::EnumerationAssignment
+class RESO::CoBuyerAgentDesignationAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::CoListAgentDesignationAssignment < Reso::EnumerationAssignment
+class RESO::CoListAgentDesignationAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::CommonInterestAssignment < Reso::EnumerationAssignment
+class RESO::CommonInterestAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::CommonWallAssignment < Reso::EnumerationAssignment
+class RESO::CommonWallAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::CompensationTypeAssignment < Reso::EnumerationAssignment
+class RESO::CompensationTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::ConcessionAssignment < Reso::EnumerationAssignment
+class RESO::ConcessionAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::ConstructionMaterialAssignment < Reso::EnumerationAssignment
+class RESO::ConstructionMaterialAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::ContactListingPreferenceAssignment < Reso::EnumerationAssignment
+class RESO::ContactListingPreferenceAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::ContactStatusAssignment < Reso::EnumerationAssignment
+class RESO::ContactStatusAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::ContactTypeAssignment < Reso::EnumerationAssignment
+class RESO::ContactTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::CountryAssignment < Reso::EnumerationAssignment
+class RESO::CountryAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::CurrentFinancingAssignment < Reso::EnumerationAssignment
+class RESO::CurrentFinancingAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::CurrentUseAssignment < Reso::EnumerationAssignment
+class RESO::CurrentUseAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::DailyScheduleAssignment < Reso::EnumerationAssignment
+class RESO::DailyScheduleAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::DevelopmentStatusAssignment < Reso::EnumerationAssignment
+class RESO::DevelopmentStatusAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::DeviceTypeAssignment < Reso::EnumerationAssignment
+class RESO::DeviceTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::DirectionFaceAssignment < Reso::EnumerationAssignment
+class RESO::DirectionFaceAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::ElectricAssignment < Reso::EnumerationAssignment
+class RESO::ElectricAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::EventTargetAssignment < Reso::EnumerationAssignment
+class RESO::EventTargetAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::EventTypeAssignment < Reso::EnumerationAssignment
+class RESO::EventTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::ExistingLeaseTypeAssignment < Reso::EnumerationAssignment
+class RESO::ExistingLeaseTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::FeeFrequencyAssignment < Reso::EnumerationAssignment
+class RESO::FeeFrequencyAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::FencingAssignment < Reso::EnumerationAssignment
+class RESO::FencingAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::FinancialDataSourceAssignment < Reso::EnumerationAssignment
+class RESO::FinancialDataSourceAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::FoundationDetailAssignment < Reso::EnumerationAssignment
+class RESO::FoundationDetailAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::FrontageTypeAssignment < Reso::EnumerationAssignment
+class RESO::FrontageTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::FurnishedAssignment < Reso::EnumerationAssignment
+class RESO::FurnishedAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::GreenBuildingVerificationTypeAssignment < Reso::EnumerationAssignment
+class RESO::GreenBuildingVerificationTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::GreenEnergyEfficientAssignment < Reso::EnumerationAssignment
+class RESO::GreenEnergyEfficientAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::GreenEnergyGenerationAssignment < Reso::EnumerationAssignment
+class RESO::GreenEnergyGenerationAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::GreenIndoorAirQualityAssignment < Reso::EnumerationAssignment
+class RESO::GreenIndoorAirQualityAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::GreenSustainabilityAssignment < Reso::EnumerationAssignment
+class RESO::GreenSustainabilityAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::GreenVerificationSourceAssignment < Reso::EnumerationAssignment
+class RESO::GreenVerificationSourceAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::GreenVerificationStatusAssignment < Reso::EnumerationAssignment
+class RESO::GreenVerificationStatusAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::GreenWaterConservationAssignment < Reso::EnumerationAssignment
+class RESO::GreenWaterConservationAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::HoursDaysOfOperationAssignment < Reso::EnumerationAssignment
+class RESO::HoursDaysOfOperationAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::ImageOfAssignment < Reso::EnumerationAssignment
+class RESO::ImageOfAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::IncomeIncludeAssignment < Reso::EnumerationAssignment
+class RESO::IncomeIncludeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::LaborInformationAssignment < Reso::EnumerationAssignment
+class RESO::LaborInformationAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::LanguageAssignment < Reso::EnumerationAssignment
+class RESO::LanguageAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::LeaseRenewalCompensationAssignment < Reso::EnumerationAssignment
+class RESO::LeaseRenewalCompensationAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::LeaseTermAssignment < Reso::EnumerationAssignment
+class RESO::LeaseTermAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::LevelAssignment < Reso::EnumerationAssignment
+class RESO::LevelAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::LinearUnitAssignment < Reso::EnumerationAssignment
+class RESO::LinearUnitAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::ListAgentDesignationAssignment < Reso::EnumerationAssignment
+class RESO::ListAgentDesignationAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::ListingAgreementAssignment < Reso::EnumerationAssignment
+class RESO::ListingAgreementAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::ListingServiceAssignment < Reso::EnumerationAssignment
+class RESO::ListingServiceAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::ListingTermAssignment < Reso::EnumerationAssignment
+class RESO::ListingTermAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::LockBoxTypeAssignment < Reso::EnumerationAssignment
+class RESO::LockBoxTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::LotDimensionsSourceAssignment < Reso::EnumerationAssignment
+class RESO::LotDimensionsSourceAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::LotSizeSourceAssignment < Reso::EnumerationAssignment
+class RESO::LotSizeSourceAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::LotSizeUnitAssignment < Reso::EnumerationAssignment
+class RESO::LotSizeUnitAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::MediaCategoryAssignment < Reso::EnumerationAssignment
+class RESO::MediaCategoryAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::MediaTypeAssignment < Reso::EnumerationAssignment
+class RESO::MediaTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::MemberDesignationAssignment < Reso::EnumerationAssignment
+class RESO::MemberDesignationAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::MemberOtherPhoneTypeAssignment < Reso::EnumerationAssignment
+class RESO::MemberOtherPhoneTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::MemberStatusAssignment < Reso::EnumerationAssignment
+class RESO::MemberStatusAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::MemberTypeAssignment < Reso::EnumerationAssignment
+class RESO::MemberTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::NotedByAssignment < Reso::EnumerationAssignment
+class RESO::NotedByAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::ObjectIdTypeAssignment < Reso::EnumerationAssignment
+class RESO::ObjectIdTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::ObjectTypeAssignment < Reso::EnumerationAssignment
+class RESO::ObjectTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::OccupantTypeAssignment < Reso::EnumerationAssignment
+class RESO::OccupantTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::OfficeBranchTypeAssignment < Reso::EnumerationAssignment
+class RESO::OfficeBranchTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::OfficeStatusAssignment < Reso::EnumerationAssignment
+class RESO::OfficeStatusAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::OfficeTypeAssignment < Reso::EnumerationAssignment
+class RESO::OfficeTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::OpenHouseStatusAssignment < Reso::EnumerationAssignment
+class RESO::OpenHouseStatusAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::OpenHouseTypeAssignment < Reso::EnumerationAssignment
+class RESO::OpenHouseTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::OperatingExpenseIncludeAssignment < Reso::EnumerationAssignment
+class RESO::OperatingExpenseIncludeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::OtherPhoneTypeAssignment < Reso::EnumerationAssignment
+class RESO::OtherPhoneTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::OtherStructureAssignment < Reso::EnumerationAssignment
+class RESO::OtherStructureAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::OwnerPayAssignment < Reso::EnumerationAssignment
+class RESO::OwnerPayAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::OwnershipTypeAssignment < Reso::EnumerationAssignment
+class RESO::OwnershipTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::PermissionAssignment < Reso::EnumerationAssignment
+class RESO::PermissionAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::PetsAllowedAssignment < Reso::EnumerationAssignment
+class RESO::PetsAllowedAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::PossessionAssignment < Reso::EnumerationAssignment
+class RESO::PossessionAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::PossibleUseAssignment < Reso::EnumerationAssignment
+class RESO::PossibleUseAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::PowerProductionAnnualStatusAssignment < Reso::EnumerationAssignment
+class RESO::PowerProductionAnnualStatusAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::PowerProductionTypeAssignment < Reso::EnumerationAssignment
+class RESO::PowerProductionTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::PreferredAddressAssignment < Reso::EnumerationAssignment
+class RESO::PreferredAddressAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::PreferredPhoneAssignment < Reso::EnumerationAssignment
+class RESO::PreferredPhoneAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::PropertyConditionAssignment < Reso::EnumerationAssignment
+class RESO::PropertyConditionAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::PropertySubTypeAssignment < Reso::EnumerationAssignment
+class RESO::PropertySubTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::PropertyTypeAssignment < Reso::EnumerationAssignment
+class RESO::PropertyTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::ReasonActiveOrDisabledAssignment < Reso::EnumerationAssignment
+class RESO::ReasonActiveOrDisabledAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::RentIncludeAssignment < Reso::EnumerationAssignment
+class RESO::RentIncludeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::ResourceNameAssignment < Reso::EnumerationAssignment
+class RESO::ResourceNameAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::RoadFrontageTypeAssignment < Reso::EnumerationAssignment
+class RESO::RoadFrontageTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::RoadResponsibilityAssignment < Reso::EnumerationAssignment
+class RESO::RoadResponsibilityAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::RoadSurfaceTypeAssignment < Reso::EnumerationAssignment
+class RESO::RoadSurfaceTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::RoofAssignment < Reso::EnumerationAssignment
+class RESO::RoofAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::RoomTypeAssignment < Reso::EnumerationAssignment
+class RESO::RoomTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::ScheduleTypeAssignment < Reso::EnumerationAssignment
+class RESO::ScheduleTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::SearchQueryTypeAssignment < Reso::EnumerationAssignment
+class RESO::SearchQueryTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::SewerAssignment < Reso::EnumerationAssignment
+class RESO::SewerAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::ShowingContactTypeAssignment < Reso::EnumerationAssignment
+class RESO::ShowingContactTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::SkirtAssignment < Reso::EnumerationAssignment
+class RESO::SkirtAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::SocialMediaTypeAssignment < Reso::EnumerationAssignment
+class RESO::SocialMediaTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::SpecialLicenseAssignment < Reso::EnumerationAssignment
+class RESO::SpecialLicenseAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::SpecialListingConditionAssignment < Reso::EnumerationAssignment
+class RESO::SpecialListingConditionAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::StandardStatusAssignment < Reso::EnumerationAssignment
+class RESO::StandardStatusAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::StateOrProvinceAssignment < Reso::EnumerationAssignment
+class RESO::StateOrProvinceAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::StreetDirectionAssignment < Reso::EnumerationAssignment
+class RESO::StreetDirectionAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::StructureTypeAssignment < Reso::EnumerationAssignment
+class RESO::StructureTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::SyndicateToAssignment < Reso::EnumerationAssignment
+class RESO::SyndicateToAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::TaxStatusCurrentAssignment < Reso::EnumerationAssignment
+class RESO::TaxStatusCurrentAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::TeamStatusAssignment < Reso::EnumerationAssignment
+class RESO::TeamStatusAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::TenantPayAssignment < Reso::EnumerationAssignment
+class RESO::TenantPayAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::UnitTypeTypeAssignment < Reso::EnumerationAssignment
+class RESO::UnitTypeTypeAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::UnitsFurnishedAssignment < Reso::EnumerationAssignment
+class RESO::UnitsFurnishedAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::UtilityAssignment < Reso::EnumerationAssignment
+class RESO::UtilityAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::VegetationAssignment < Reso::EnumerationAssignment
+class RESO::VegetationAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::WaterSourceAssignment < Reso::EnumerationAssignment
+class RESO::WaterSourceAssignment < RESO::EnumerationAssignment
 end
 
-class Reso::YearBuiltSourceAssignment < Reso::EnumerationAssignment
+class RESO::YearBuiltSourceAssignment < RESO::EnumerationAssignment
 end

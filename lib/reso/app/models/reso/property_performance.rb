@@ -1,2 +1,2 @@
-class Reso::PropertyPerformance < ApplicationRecord
+class RESO::PropertyPerformance < ApplicationRecord
 end

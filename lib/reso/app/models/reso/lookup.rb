@@ -1,2 +1,2 @@
-class Reso::Lookup
+class RESO::Lookup
 end

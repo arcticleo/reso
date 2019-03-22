@@ -5,7 +5,7 @@ require "reso/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "reso"
-  spec.version       = Reso::VERSION
+  spec.version       = RESO::VERSION
   spec.authors       = ["Michael Edlund"]
   spec.email         = ["medlund@mac.com"]
 

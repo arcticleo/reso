@@ -1,3 +1,3 @@
-class Reso::Contact < ApplicationRecord
+class RESO::Contact < ApplicationRecord
   self.table_name = 'reso_contacts'
 end

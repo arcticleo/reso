@@ -1,4 +1,4 @@
-class Reso::Property::Location < ApplicationRecord
+class RESO::Property::Location < ApplicationRecord
   self.table_name = 'reso_property_locations'
   
   belongs_to :property
