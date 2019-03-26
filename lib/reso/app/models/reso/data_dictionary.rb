@@ -22,12 +22,12 @@ class RESO::DataDictionary
       resources << resource["WikiPageTitle"].to_s.split(" ").first.classify
       resources << self.groups_for_resource(resources.last)
     end
-    return resources.flatten.presence.compact.map{|res| "Reso::#{res}" }
+    return resources.flatten.presence.compact.map{|res| "RESO::#{res}" }
   end
 
   def lookup_fields
     self.xml_doc.css("LookupValue LookupField").map do |item|
-      "Reso::Lookup::#{item.content.classify}"
+      "RESO::Lookup::#{item.content.classify}"
     end.uniq.sort.delete_if{|item| item.include?("[")}
   end
 
@@ -109,7 +109,7 @@ class RESO::DataDictionary
 
   def fields_for_class klass
     klass_parts = klass.split("::")
-    return [] unless klass_parts.first.eql?("Reso") && klass_parts.count > 1
+    return [] unless klass_parts.first.eql?("RESO") && klass_parts.count > 1
     fields = self.fields_for_resource klass_parts.second
     return fields.delete_if{|f| f[:groups].map(&:classify) != klass_parts.drop(1)}
   end
