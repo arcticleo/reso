@@ -2,7 +2,7 @@ require 'nokogiri'
 require 'open-uri'
 
 RSpec.describe "Data classes" do
-  Reso::DataDictionary.specification.resources.each do |resource|
+  RESO::DataDictionary.specification.resources.each do |resource|
     it "#{resource} can be initialized" do
       expect(resource.constantize.new).to be_a(resource.constantize)
     end
@@ -23,9 +23,9 @@ RSpec.describe "Data classes" do
   end
 end
 
-Reso::DataDictionary.specification.resources.each do |resource|
+RESO::DataDictionary.specification.resources.each do |resource|
   RSpec.describe "#{resource}" do
-    Reso::DataDictionary.specification.fields_for_class(resource).delete_if{|f| f[:attribute_name].include? "["}.each do |f|
+    RESO::DataDictionary.specification.fields_for_class(resource).delete_if{|f| f[:attribute_name].include? "["}.each do |f|
       it "#{f[:attribute_name]} can be called" do
         expect{resource.constantize.new.send(f[:attribute_name])}.not_to raise_error
       end

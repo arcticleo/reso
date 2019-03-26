@@ -17,7 +17,7 @@ RSpec.describe "Lookup Fields" do
 #    expect{PROPERTY_TYPES.each{|name| Reso::Lookup::PropertyType.create(name: name)}}.to raise_error
 #  end
 
-  Reso::DataDictionary::specification.lookup_fields.each do |lookup_field|
+  RESO::DataDictionary::specification.lookup_fields.each do |lookup_field|
     it "#{lookup_field} can be initialized" do
       expect{lookup_field.constantize.new}.not_to raise_error
     end
