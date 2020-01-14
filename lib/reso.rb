@@ -27,6 +27,7 @@ require "reso/app/models/reso/lookup/units_furnished.rb"
 require "reso/app/models/reso/lookup/utility.rb"
 require "reso/app/models/reso/lookup/vegetation.rb"
 require "reso/app/models/reso/lookup/water_source.rb"
+require "reso/app/models/reso/lookup/waterfront_feature.rb"
 require "reso/app/models/reso/lookup/window_feature.rb"
 require "reso/app/models/reso/lookup/year_built_source.rb"
 
