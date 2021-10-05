@@ -1244,6 +1244,7 @@ ActiveRecord::Schema.define do
     t.string :actor_source_system_name, limit: 255
     t.text :actor_state_or_province, limit: 2 # TODO: DELETE - String List, Single - has_one :through
     t.text :actor_type, limit: 25 # TODO: DELETE - String List, Single - has_one :through
+    t.string :color_depth, limit: 255 # TODO: validates :color_depth, format: { with: /A[0-9]+z/ }
     t.text :device_type, limit: 128 # TODO: DELETE - String List, Single - has_one :through
     t.string :originating_system_actor_key, limit: 255
     t.string :session_id, limit: 255
