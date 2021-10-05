@@ -622,6 +622,7 @@ ActiveRecord::Schema.define do
     t.text :architectural_style, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
     t.boolean :attached_garage_yn
     t.text :basement, limit: 1024 # TODO: DELETE - String List, Multi - has_many :through
+    t.boolean :basement_yn
     t.integer :bathrooms_full # TODO: verify length of .to_s to max 3
     t.integer :bathrooms_half # TODO: verify length of .to_s to max 3
     t.integer :bathrooms_one_quarter # TODO: verify length of .to_s to max 3
