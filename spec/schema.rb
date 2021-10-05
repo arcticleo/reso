@@ -1078,7 +1078,7 @@ ActiveRecord::Schema.define do
     t.string :owner_member_key, limit: 255
     t.string :owner_member_key_numeric, limit: 255 # TODO: validates :owner_member_key_numeric, format: { with: /A[0-9]+z/ }
     t.string :pager, limit: 16
-    t.string :phone_ttyttd, limit: 16
+    t.string :phone_ttytdd, limit: 16
     t.text :preferred_address, limit: 255 # TODO: DELETE - String List, Single - has_one :through
     t.text :preferred_phone, limit: 255 # TODO: DELETE - String List, Single - has_one :through
     t.string :referred_by, limit: 150
