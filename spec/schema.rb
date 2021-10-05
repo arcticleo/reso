@@ -449,7 +449,7 @@ ActiveRecord::Schema.define do
 
   create_table :reso_property_listing_dates, :force => true do |t|
     t.integer :listing_id
-    t.date :cancelation_date
+    t.date :cancellation_date
     t.date :close_date
     t.date :contingent_date
     t.date :contract_status_change_date
