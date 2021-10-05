@@ -22,6 +22,7 @@ ActiveRecord::Schema.define do
 #    t.text :property_sub_type, limit: 50 # TODO: DELETE - String List, Single - has_one :through
     t.text :property_type, limit: 50 # TODO: DELETE - String List, Single - has_one :through
     t.string :universal_property_id, limit: 128
+    t.string :universal_property_sub_id, limit: 128
     t.timestamps
   end
 
