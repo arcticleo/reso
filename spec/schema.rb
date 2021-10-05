@@ -1247,6 +1247,8 @@ ActiveRecord::Schema.define do
     t.string :color_depth, limit: 255 # TODO: validates :color_depth, format: { with: /A[0-9]+z/ }
     t.text :device_type, limit: 128 # TODO: DELETE - String List, Single - has_one :through
     t.string :originating_system_actor_key, limit: 255
+    t.string :screen_height, limit: 255 # TODO: validates :screen_height, format: { with: /A[0-9]+z/ }
+    t.string :screen_width, limit: 255 # TODO: validates :screen_width, format: { with: /A[0-9]+z/ }
     t.string :session_id, limit: 255
     t.string :source_system_actor_key, limit: 255
     t.string :user_agent, limit: 255
