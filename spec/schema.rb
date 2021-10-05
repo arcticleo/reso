@@ -1252,6 +1252,7 @@ ActiveRecord::Schema.define do
     t.string :session_id, limit: 255
     t.string :source_system_actor_key, limit: 255
     t.string :user_agent, limit: 255
+    t.decimal :time_zone_offset, limit: 3, precision: 1
     t.timestamps
   end
 
