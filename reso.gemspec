@@ -27,5 +27,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "sqlite3"
   spec.add_dependency "activerecord", ">= 6.0.3.5"
-  spec.add_dependency "nokogiri", ">= 1.12.5"
+  spec.add_dependency "nokogiri", ">= 1.13.2"
 end
