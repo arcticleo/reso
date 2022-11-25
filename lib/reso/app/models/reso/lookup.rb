@@ -1,2 +1,0 @@
-class RESO::Lookup
-end
