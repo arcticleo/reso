@@ -12,13 +12,22 @@ Add this line to your application's Gemfile:
 gem 'reso'
 ```
 
-And then execute:
+And then install:
 
     $ bundle
 
-Or install it yourself as:
+Run the generator to copy migrations to your app:
 
-    $ gem install reso
+    $ rails g reso:install
+
+Create the database:
+
+    $ rails db:create
+
+Run the migrations:
+
+    $ rails db:migrate
+
 
 ## Usage
 
