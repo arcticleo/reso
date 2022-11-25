@@ -20,15 +20,15 @@ module Reso
           reso_property_equipment
           reso_property_farmings
           reso_property_financials
+          reso_property_listings
           reso_property_listing_prices
           reso_property_listing_remarks
           reso_property_listing_showings
-          reso_property_listings
+          reso_property_locations
           reso_property_location_addresses
           reso_property_location_areas
           reso_property_location_gis
           reso_property_location_schools
-          reso_property_locations
           reso_property_occupant_owners
           reso_property_structures
         ].each do |name|
