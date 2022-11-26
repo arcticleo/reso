@@ -35,6 +35,8 @@ module Reso
           migration_template "create_#{name}.rb", "db/migrate/create_#{name}.rb"
           sleep 0.1
         end
+        migration_template "populate_reso_seed_data.rb", "db/migrate/populate_reso_seed_data.rb"
+        template "reso_enumerations.tsv", "db/reso_enumerations.tsv"
       end
 
     end
