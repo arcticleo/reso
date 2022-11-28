@@ -191,7 +191,7 @@ end
 # class RESO::FlooringAssignment < RESO::ParentChildAssignment
 # end
 
-# class RESO::FoundationDetailsAssignment < RESO::ParentChildAssignment
+# class RESO::FoundationDetailAssignment < RESO::ParentChildAssignment
 # end
 
 # class RESO::FrontageTypeAssignment < RESO::ParentChildAssignment

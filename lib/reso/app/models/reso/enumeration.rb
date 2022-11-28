@@ -1,8 +1,8 @@
 class RESO::Enumeration < ApplicationRecord
   def self.lookup_enum(value, is_open = true)
-    enum = self.find_by(value: value)
+    enum = self.find_by(value: value.gsub(/\W/, ""))
     enum = self.find_by(display_name: value) if enum.blank?
-    enum = self.find_or_create_by(value: value, display_name: value) if enum.blank? if is_open rescue nil
+    enum = self.where(value: value.gsub(/\W/, ""), display_name: value).first_or_create if enum.blank? && is_open
     return enum
   end
   

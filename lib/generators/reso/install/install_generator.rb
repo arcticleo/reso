@@ -36,7 +36,7 @@ module Reso
           sleep 0.1
         end
         migration_template "populate_reso_seed_data.rb", "db/migrate/populate_reso_seed_data.rb"
-        template "reso_enumerations.tsv", "db/reso_enumerations.tsv"
+        template "reso_dd_2.0_lookups.tsv", "db/data/reso_dd_2.0_lookups.tsv"
       end
 
     end
