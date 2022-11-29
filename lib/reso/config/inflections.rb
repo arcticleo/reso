@@ -7,7 +7,8 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.acronym "FHA"
   inflect.acronym "GIS"
   inflect.acronym "RESO"
+  inflect.acronym "URL"
 
-  inflect.uncountable %w( fha gis media socialmedia )
+  inflect.uncountable %w( gis media socialmedia )
 
 end

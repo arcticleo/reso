@@ -22,6 +22,12 @@ class RESO::Property::Listing < ApplicationRecord
     source_type: "RESO::Enumeration",
     source: :child
 
+  has_one :reso_listing_url_description_assignment, as: :parent, class_name: "ListingURLDescriptionAssignment", dependent: :destroy
+  has_one :listing_url_description,
+    through: :reso_url_description_assignment,
+    source_type: "RESO::Enumeration",
+    source: :child
+
   has_one :reso_mls_status_assignment, as: :parent, class_name: "MlsStatusAssignment", dependent: :destroy
   has_one :mls_status,
     through: :reso_mls_status_assignment,
@@ -47,6 +53,11 @@ class RESO::Property::Listing < ApplicationRecord
   def listing_service=(value)
     enum = RESO::ListingService.lookup_enum(value)
     RESO::ListingServiceAssignment.single_assignment(parent: self, child: enum) unless enum.blank?
+  end
+
+  def listing_url_description=(value)
+    enum = RESO::ListingURLDescription.lookup_enum(value)
+    RESO::ListingUELDescriptionAssignment.single_assignment(parent: self, child: enum) unless enum.blank?
   end
 
   def mls_status=(value)
